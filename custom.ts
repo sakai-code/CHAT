@@ -21,7 +21,7 @@ namespace CHAT {
     //% x.min=1 x.max=99 x.defl=1
     
      /**
-     * TODO:デバイスのIPアドレスを定めて初期化
+     * TODO:デバイスのIDを定めて初期化
      */
     export function oninit(n:number,x:number){
         radio.setGroup(n)
@@ -49,6 +49,17 @@ namespace CHAT {
     //% block="グループのメッセージが変わったら実行する"
     export function onfoo(handler:()=> void){
         onxHandler = handler
+      
+    }
+     /**
+     * TODO:自分のipアドレス（192.168.0.X形式)で表示
+   　
+     */
+    //%weight=90
+    //% group="LAN"
+    //% block="自分のID:〇に設定した〇の数字を表示"
+    export function myip():void{
+        basic.showNumber(myipaddress)
       
     }
     /**
