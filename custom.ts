@@ -30,9 +30,11 @@ namespace CHAT {
        
 
         radio.onReceivedString(function (receivedString: string) {
+            receivedfromip =  receivedString.substr(0,1)
+                
             
            
-                receivedtext = receivedString.substr(1,17)
+            receivedtext = receivedString.substr(1,17)
                 
             onxHandler(receivedtext,1)
            
@@ -46,17 +48,19 @@ namespace CHAT {
      */
     //%weight=90
     //% group="CHAT"
-    //% block="グループのメッセージが変わったら実行する"
-    export function onfoo(handler:()=> void){
+    //% block="グループのメッセージ|$receivedmessage|が変わったら実行する"
+   //% receivedtext.defl=receivedtext
+    //% draggableParameters="reporter"
+    export function onfoo(handler:(receivedmessage:string)=> void){
         onxHandler = handler
       
     }
      /**
-     * TODO:自分のipアドレス（192.168.0.X形式)で表示
+     * TODO:自分のIDを表示
    　
      */
     //%weight=90
-    //% group="LAN"
+    //% group="CHAT"
     //% block="自分のID:〇に設定した〇の数字を表示"
     export function myip():void{
         basic.showNumber(myipaddress)
@@ -78,6 +82,7 @@ namespace CHAT {
 
 
     }
+  
     /**
      * TODO:グループのデバイスに文字列（英数字のみ）を送信
    　
@@ -86,7 +91,6 @@ namespace CHAT {
     //% group="CHAT"
     
     //% block="グループ全体に文字列%yを送信（英数字のみ１７文字まで）"
-    //% n.min=1 n.max=99 n.defl=1
     //% y.defl= "HELLO"
     export function sendmessege(y:string ){
         
