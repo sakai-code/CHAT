@@ -1,7 +1,7 @@
 {
     "name": "CHAT",
     "version": "0.0.2",
-    "description": "",
+    "description": "micro:bitを用いたチャットアプリ",
     "dependencies": {
         "core": "*",
         "radio": "*",
