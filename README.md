@@ -1,14 +1,14 @@
 
 > Open this page at [https://sakai-code.github.io/chat/](https://sakai-code.github.io/chat/)
 
-## Use as Extension
+## 拡張として使用
 
 This repository can be added as an **extension** in MakeCode.
 
-* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/sakai-code/chat** and import
+* このURLを開き [https://makecode.microbit.org/](https://makecode.microbit.org/)
+* 新規にプロジェクトを作成 **New Project**
+* 高度なブロック→拡張から **Extensions** under the gearwheel menu
+* 右のURLを検索欄に張り付け **https://github.com/sakai-code/chat** and import
 
 ## Edit this project ![Build status badge](https://github.com/sakai-code/chat/workflows/MakeCode/badge.svg)
 
