@@ -227,10 +227,10 @@ namespace CHAT {
      */
     //%weight=40
     //% group="SERVER"
-    //% block="受信したデバイスID＋登録された名前+メッセージの内容の文字列"
+    //% block="受信したデバイスID : 登録された名前 : メッセージの内容の文字列"
     export function  receivedmessage():string　{ 
         let receivedmessage:string;
-        receivedmessage = ""+convertToText(fromid)+":"+""+receivedfromip+""+receivedtext;
+        receivedmessage = ""+convertToText(fromid)+":"+""+receivedfromip+":"+""+receivedtext;
         return receivedmessage;
         
 
@@ -244,7 +244,7 @@ namespace CHAT {
      */
     //%weight=40
     //% group="SERVER"
-    //% block="デバイスID+名前＋:メッセージの内容の文字列をシリアル通信で出力"
+    //% block="デバイスID + 名前 ＋ メッセージの内容の文字列をシリアル通信で出力"
     export function  messagetoserial():void　{ 
        let receivedmessage:string;
        receivedmessage = "|===DEVICEID: "+""+convertToText(fromid)+"===|==="+""+receivedfromip+"===|==="+""+receivedtext+"===|";
@@ -263,11 +263,13 @@ namespace CHAT {
     
         /**
      * TODO:サーバーから全体にメッセージを送る
+     * @param y 送る内容　,eg:"HELLO FROM SERVER"
    　
      */
     //%weight=40
     //% group="SERVER"
     //% block="サーバーから全体にメッセージ$yを送る"
+    
     export function sendmessage(y:string):void{
         radio.sendValue("SERVER", 0)
         radio.sendString(y)
