@@ -2,16 +2,17 @@
 //% weight=100 color=#007EFF icon="\uf022"
 //% groups="['CHAT', 'SERVER']"
 namespace CHAT {
-    let receivedtoip : number
-    let receivedfromip : string
+    let receivedtoip = 0
+    let receivedfromip = ""
     let fromid = 0
     let setflags = 0
    
    
-    let myipaddress : number
+    let myipaddress = 0
      let myname =""
     let makestring = "" 
-    let receivedtext : string 
+    let receivedtext = ""
+    let secret = 0
 
 
     let onxHandler:  (name :string,value:number) => void
@@ -31,10 +32,19 @@ namespace CHAT {
         myipaddress = x
         myname = y
         radio.onReceivedValue(function (name: string, value: number) {
-            if(setflags == 0){
-            receivedfromip = name
+            
+            switch(setflags){
+            case 0: receivedfromip = name
             fromid = value
             setflags = 1
+            
+            case 1 : break
+            case 2: break 
+
+            case 3: receivedfromip = name
+            fromid = value
+            setflags = 1
+
             }
             
 
@@ -52,8 +62,19 @@ namespace CHAT {
                 
             onxHandler(receivedtext,1)
             setflags = 0
+            secret = 0
            }
            
+        })
+        radio.onReceivedNumber(function (receivedNumber: number) {
+            if( receivedNumber == myipaddress){
+                setflags = 3
+
+
+            }else{setflags =1
+
+            }
+            
         })
     }
 
@@ -64,7 +85,7 @@ namespace CHAT {
      */
     //%weight=90
     //% group="CHAT","SERVER"
-    //% block="グループのメッセージ|$receivedmessage|が変わったら実行する"
+    //% block="文字列|$receivedmessage|を受信したら実行する"
    //% receivedtext.defl=receivedtext
     //% draggableParameters="reporter"
     export function onfoo(handler:(receivedmessage:string)=> void){
@@ -83,12 +104,12 @@ namespace CHAT {
       
     }
     /**
-     * TODO:受信した文字列（英数字のみ）
+     * TODO:受信したメッセージ（英数字のみ）
    　
      */
     //%weight=80
     //% group="CHAT"
-    //% block="受信した文字列（英数字）"
+    //% block="受信したメッセージ(英数字）"
     export function receivedstring():string　{ 
         let receivedstring:string
 
@@ -99,6 +120,7 @@ namespace CHAT {
 
 
     }
+
     /**
      * TODO:受信した相手のID（英数字のみ）
    　
@@ -157,6 +179,25 @@ namespace CHAT {
         
 
     }
+     /**
+     * TODO:指定したID番号に文字列を送る。
+     * @param y 送信する文字列,　eg:"HELLO"
+   　
+     */
+    //%weight=70
+    //% group="CHAT"
+    
+    //% block="指定したID$nに文字列%yを秘匿送信（英数字のみ１７文字まで）"
+    //% y.defl= "HELLO"
+    export function sendsecretmessege(n:number,y:string ){
+        radio.sendNumber(0)
+       radio.sendValue(myname, myipaddress)
+   
+        radio.sendString(y)
+        
+        
+
+    }
 
 
 
@@ -170,14 +211,24 @@ namespace CHAT {
     //% n.min=1 n.max=99 n.defl=1
     export function server(n:number){
         radio.setGroup(n)
-       
-      
-
-       radio.onReceivedValue(function (name: string, value: number) {
-            if(setflags == 0){
-            receivedfromip = name
+        myipaddress =  0
+        myname = "SERVER"
+        radio.onReceivedValue(function (name: string, value: number) {
+            
+            switch(setflags){
+            case 0: receivedfromip = name
             fromid = value
             setflags = 1
+            
+            case 1 : break
+            case 2: break 
+
+            case 3: receivedfromip = name
+            fromid = value
+            setflags = 1
+            
+            
+
             }
             
 
@@ -195,9 +246,19 @@ namespace CHAT {
                 
             onxHandler(receivedtext,1)
             setflags = 0
+            basic.pause(5)
+            secret = 0
            }
            
         })
+        radio.onReceivedNumber(function (receivedNumber: number) {
+          setflags = 3
+          secret = 1
+          receivedtoip = receivedNumber
+          
+            
+        })
+
     }
         
 
@@ -230,8 +291,13 @@ namespace CHAT {
     //% block="受信したデバイスID : 登録された名前 : メッセージの内容の文字列"
     export function  receivedmessage():string　{ 
         let receivedmessage:string;
-        receivedmessage = ""+convertToText(fromid)+":"+""+receivedfromip+":"+""+receivedtext;
+        if(secret){
+        receivedmessage = ""+convertToText(fromid)+"to"+""+convertToText(receivedtoip) +" SECRETMESSAGE";
         return receivedmessage;
+        }else{receivedmessage = ""+convertToText(fromid)+":"+""+receivedfromip+":"+""+receivedtext;
+        return receivedmessage;
+
+        }
         
 
 
@@ -247,12 +313,22 @@ namespace CHAT {
     //% block="デバイスID + 名前 ＋ メッセージの内容の文字列をシリアル通信で出力"
     export function  messagetoserial():void　{ 
        let receivedmessage:string;
+       if(secret){
+            receivedmessage = "|===FROM: "+""+convertToText(fromid)+"->"+""+convertToText(receivedtoip)+"===|===SECRETMESSAGE===|"
+       
+        serial.writeLine("SECRET SEND DETECTED!"); 
+        serial.writeLine("|...[FROMID -> TOID  ]...|......[MESSAGE].....|");
+        serial.writeLine(receivedmessage);
+        serial.writeLine("|=================|====================|");
+
+       }else{
        receivedmessage = "|===DEVICEID: "+""+convertToText(fromid)+"===|==="+""+receivedfromip+"===|==="+""+receivedtext+"===|";
        
         serial.writeLine("RECEIVED!"); 
         serial.writeLine("|...[DEVICE_ID]...|...[NAME]...|......[MESSAGE].....|");
         serial.writeLine(receivedmessage);
         serial.writeLine("|=================|============|====================|");
+       }
         
         
 
