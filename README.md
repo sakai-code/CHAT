@@ -18,7 +18,8 @@ This repository can be added as an **extension** in MakeCode.
 ![readme_page-0003](https://user-images.githubusercontent.com/76587090/109405765-50698200-79b7-11eb-815e-e2a69981c4f0.jpg)
 ![readme_page-0004](https://user-images.githubusercontent.com/76587090/109405766-50698200-79b7-11eb-852b-689527ca8d5a.jpg)
 ![readme_page-0005](https://user-images.githubusercontent.com/76587090/109405767-51021880-79b7-11eb-8b6f-e53d9257aa61.jpg)
-![readme_page-0006](https://user-images.githubusercontent.com/76587090/109405768-519aaf00-79b7-11eb-90a3-00ef2bf5df17.jpg)
+![readme_page-0006](https://user-images.githubusercontent.com/76587090/109439663-a9e2b700-7a72-11eb-86fa-4a677a248182.jpg)
+
 
 ## Edit this project ![Build status badge](https://github.com/sakai-code/chat/workflows/MakeCode/badge.svg)
 
