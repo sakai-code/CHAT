@@ -5,8 +5,7 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*",
-        "OLED-ssd1306": "github:sakai-code/oled-ssd1306#v0.0.4"
+        "microphone": "*"
     },
     "files": [
         "main.blocks",
@@ -20,5 +19,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
