@@ -46,7 +46,8 @@ namespace CHAT {
             setflags = 1
             
             case 1 : break
-            case 2: break 
+            case 2:  setflags = 0 
+            break 
 
             case 3: receivedfromip = name
             fromid = value
@@ -78,7 +79,7 @@ namespace CHAT {
                 setflags = 3
 
 
-            }else{setflags =1
+            }else{setflags =2
 
             }
             
@@ -321,12 +322,12 @@ namespace CHAT {
     export function  messagetoserial():void　{ 
        let receivedmessage:string;
        if(secret){
-            receivedmessage = "|===FROM: "+""+convertToText(fromid)+"->"+""+convertToText(receivedtoip)+"===|===SECRETMESSAGE===|"
+            receivedmessage = "|=======FROM: "+""+convertToText(fromid)+"->"+""+convertToText(receivedtoip)+"======|===SECRETMESSAGE===|"
        
         serial.writeLine("SECRET SEND DETECTED!"); 
-        serial.writeLine("|...[FROMID -> TOID  ]...|......[MESSAGE].....|");
+        serial.writeLine("|...[FROMID -> TOID  ]...|......[MESSAGE]....|");
         serial.writeLine(receivedmessage);
-        serial.writeLine("|=================|====================|");
+        serial.writeLine("|=======================|===================|");
 
        }else{
        receivedmessage = "|===DEVICEID: "+""+convertToText(fromid)+"===|==="+""+receivedfromip+"===|==="+""+receivedtext+"===|";
