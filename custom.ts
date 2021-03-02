@@ -85,7 +85,7 @@ namespace CHAT {
      */
     //%weight=90
     //% group="CHAT","SERVER"
-    //% block="文字列|$receivedmessage|を受信したら実行する"
+    //% block="メッセージ|$receivedmessage|を受信したら実行する"
    //% receivedtext.defl=receivedtext
     //% draggableParameters="reporter"
     export function onfoo(handler:(receivedmessage:string)=> void){
@@ -104,12 +104,12 @@ namespace CHAT {
       
     }
     /**
-     * TODO:受信したメッセージ（英数字のみ）
+     * TODO:受信した文字列（英数字のみ）
    　
      */
     //%weight=80
     //% group="CHAT"
-    //% block="受信したメッセージ(英数字）"
+    //% block="受信した文字列(英数字）"
     export function receivedstring():string　{ 
         let receivedstring:string
 
@@ -180,17 +180,17 @@ namespace CHAT {
 
     }
      /**
-     * TODO:指定したID番号に文字列を送る。
+     * TODO:指定したID番号にメッセージを送る。
      * @param y 送信する文字列,　eg:"HELLO"
    　
      */
     //%weight=70
     //% group="CHAT"
-    
-    //% block="指定したID$nに文字列%yを秘匿送信（英数字のみ１７文字まで）"
+    //% n.defl=1  
+    //% block="指定したID$nにメッセージ%yを秘匿送信（英数字のみ１７文字まで）"
     //% y.defl= "HELLO"
     export function sendsecretmessege(n:number,y:string ){
-        radio.sendNumber(0)
+        radio.sendNumber(n)
        radio.sendValue(myname, myipaddress)
    
         radio.sendString(y)
@@ -267,7 +267,7 @@ namespace CHAT {
 
     
      /**
-     * TODO:メッセージのやり取りがあったら実行する
+     * TODO:文字列のやり取りがあったら実行する
    　
      */
     //%weight=50
