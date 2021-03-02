@@ -15,8 +15,15 @@ namespace CHAT {
     let secret = 0
 
 
-    let onxHandler:  (name :string,value:number) => void
-    let onGroupHandler: (name:string) => void
+    let onxHandler:  (name :string  ) => void
+
+    function onsethandler(handler:()=>void){
+        onxHandler = handler
+
+
+    }
+    onsethandler(function(){})
+  
     //%block="グループ番号$nで使用するIDを$x　登録する名前を $y にする"
     //%weight=100
     //% group="CHAT"
@@ -60,7 +67,7 @@ namespace CHAT {
            if(setflags == 1){
             receivedtext = receivedString
                 
-            onxHandler(receivedtext,1)
+            onxHandler(receivedtext)
             setflags = 0
             secret = 0
            }
@@ -88,10 +95,11 @@ namespace CHAT {
     //% block="メッセージ|$receivedmessage|を受信したら実行する"
    //% receivedtext.defl=receivedtext
     //% draggableParameters="reporter"
-    export function onfoo(handler:(receivedmessage:string)=> void){
+    export function onhand(handler:(receivedmessage:string)=> void){
         onxHandler = handler
       
     }
+
      /**
      * TODO:自分のIDを表示
    　
@@ -244,7 +252,7 @@ namespace CHAT {
            if(setflags == 1){
             receivedtext = receivedString
                 
-            onxHandler(receivedtext,1)
+            onxHandler(receivedtext)
             setflags = 0
             basic.pause(5)
             secret = 0
@@ -272,11 +280,10 @@ namespace CHAT {
      */
     //%weight=50
     //% group="SERVER"
-    //% block="グループでメッセージ$receivedtextのやり取りがあったら"
-    //% receivedtext.defl=receivedtext
-    //% draggableParameters="reporter"
+    //% block="グループでメッセージのやり取りがあったら"
+   
     
-    export function onserver(handler:(receivedtext:string)=>void){
+    export function onserver(handler:()=>void){
          onxHandler = handler;
         
         
@@ -353,6 +360,7 @@ namespace CHAT {
     
 
     }
+
 
 
     
