@@ -18,7 +18,7 @@ namespace CHAT {
     let onxHandler:  (name :string  ) => void
 
     function onsethandler(handler:()=>void){
-        onxHandler = handler
+        onxHandler = handler //これがないとメモリエラーになる
 
 
     }
@@ -51,7 +51,9 @@ namespace CHAT {
 
             case 3: receivedfromip = name
             fromid = value
-            setflags = 1
+            setflags = 4
+
+            case 4: break
 
             }
             
@@ -64,14 +66,25 @@ namespace CHAT {
         radio.onReceivedString(function (receivedString: string) {
       
                 
-            
-           if(setflags == 1){
-            receivedtext = receivedString
+            switch(setflags){
+                case 0: break
+                case 1: receivedtext = receivedString
                 
-            onxHandler(receivedtext)
-            setflags = 0
-            secret = 0
-           }
+                onxHandler(receivedtext)
+                setflags = 0
+                secret = 0
+
+                case 2 : break
+                case 3: break
+                case 4: receivedtext = "SECRET: "+""+receivedString
+                
+                onxHandler(receivedtext)
+                setflags = 0
+                secret = 0
+
+
+            }
+          
            
         })
         radio.onReceivedNumber(function (receivedNumber: number) {
