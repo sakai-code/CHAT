@@ -1,5 +1,5 @@
 
-//% weight=100 color=#007EFF icon="\uf022"
+//% weight=100 color=#007EFF icon="\uf022"　block="チャット"
 //% groups="['CHAT', 'SERVER']"
 namespace CHAT {
     let receivedtoip = 0
@@ -24,7 +24,7 @@ namespace CHAT {
     }
     onsethandler(function(){})
   
-    //%block="グループ番号$nで使用するIDを$x　登録する名前を $y にする"
+    //%block="グループ $n で使用するID番号（数字) $x　登録する名前を $y にする"
     //%weight=100
     //% group="CHAT"
     //% n.min=1 n.max=99 n.defl=1
@@ -106,7 +106,7 @@ namespace CHAT {
      */
     //%weight=90
     //% group="CHAT","SERVER"
-    //% block="メッセージ|$receivedmessage|を受信したら実行する"
+    //% block="メッセージ|$receivedmessage|を受信したらこのブロック内のプログラムを実行する"
    //% receivedtext.defl=receivedtext
     //% draggableParameters="reporter"
     export function onhand(handler:(receivedmessage:string)=> void){
@@ -122,7 +122,114 @@ namespace CHAT {
     //% group="CHAT"
     //% block="自分のID:〇に設定した〇の数字を表示"
     export function myip():void{
-        basic.showNumber(myipaddress)
+         if(myipaddress < 10){basic.showNumber(myipaddress)
+
+        }else{
+            switch(myipaddress){
+                case 10:
+                basic.showLeds(`
+                # . # # #
+                # . # . #
+                # . # . #
+                # . # . #
+                # . # # #
+                `)
+                break
+                case 11:
+                 basic.showLeds(`
+                # . . # .
+                # . . # .
+                # . . # .
+                # . . # .
+                # . . # .
+                `)
+                break
+                case 12:
+                basic.showLeds(`
+    # . # # #
+    # . . . #
+    # . # # #
+    # . # . .
+    # . # # #
+    `)
+    break
+                case 13:
+                basic.showLeds(`
+    # . # # #
+    # . . . #
+    # . # # #
+    # . . . #
+    # . # # #
+    `)     
+    break    
+                 case 14:
+    basic.showLeds(`
+    # . # . #
+    # . # . #
+    # . # # #
+    # . . . #
+    # . . . #
+    `)     
+    break
+                case 15:
+                basic.showLeds(`
+    # . # # #
+    # . # . .
+    # . # # #
+    # . . . #
+    # . # # #
+    `)
+    break
+                case 16:
+                basic.showLeds(`
+    # . # # #
+    # . # . .
+    # . # # #
+    # . # . #
+    # . # # #
+    `)
+    break
+                case 17:
+                basic.showLeds(`
+    # . # # #
+    # . . . #
+    # . . . #
+    # . . . #
+    # . . . #
+    `)
+    break
+                case 18:
+                basic.showLeds(`
+    # . # # #
+    # . # . #
+    # . # # #
+    # . # . #
+    # . # # #
+    `)
+    break
+                case 19:
+                basic.showLeds(`
+    # . # # #
+    # . # . #
+    # . # # #
+    # . . . #
+    # . . . #
+    `)
+    break
+                default: 
+                basic.showNumber(myipaddress)
+                break
+
+
+
+
+
+
+            }
+           
+
+        }
+       
       
     }
     /**
@@ -131,7 +238,7 @@ namespace CHAT {
      */
     //%weight=80
     //% group="CHAT"
-    //% block="受信した文字列(英数字）"
+    //% block="最後に受信したメッセージ(英数字）"
     export function receivedstring():string　{ 
         let receivedstring:string
 
@@ -149,7 +256,7 @@ namespace CHAT {
      */
     //%weight=80
     //% group="CHAT"
-    //% block="受信した相手のID（数字）"
+    //% block="最後に受信した相手のID番号（数字）"
     export function receivedid():number　{ 
         let fid = fromid
         return fid
@@ -159,12 +266,12 @@ namespace CHAT {
 
     }
     /**
-     * TODO:受信した相手の名前（英数字のみ）
+     * TODO:受信した相手の名前（英数字）
    　
      */
     //%weight=80
     //% group="CHAT"
-    //% block="受信した相手の名前（文字列）"
+    //% block="最後に受信した相手の名前（英数字）"
     export function receivedname():string　{ 
         let fname = receivedfromip
         return fname
@@ -182,13 +289,13 @@ namespace CHAT {
   
     /**
      * TODO:グループのデバイスに文字列（英数字のみ）を送信
-     * @param y 送信する文字列,　eg:"HELLO"
+     * @param y 送信するメッセージ　eg:"HELLO"
    　
      */
     //%weight=70
     //% group="CHAT"
     
-    //% block="グループ全体に文字列%yを送信（英数字のみ１７文字まで）"
+    //% block="グループ全体にメッセージ%yを送信（英数字のみ１７文字まで）"
     //% y.defl= "HELLO"
     export function sendmessege(y:string ){
        radio.sendValue(myname, myipaddress)
@@ -309,7 +416,7 @@ namespace CHAT {
      */
     //%weight=40
     //% group="SERVER"
-    //% block="受信したデバイスID : 登録された名前 : メッセージの内容の文字列"
+    //% block="受信したデバイスID : 登録された名前 : メッセージの内容"
     export function  receivedmessage():string　{ 
         let receivedmessage:string;
         if(secret){
@@ -331,7 +438,7 @@ namespace CHAT {
      */
     //%weight=40
     //% group="SERVER"
-    //% block="デバイスID + 名前 ＋ メッセージの内容の文字列をシリアル通信で出力"
+    //% block="デバイスID + 名前 ＋ メッセージの内容をシリアル通信で出力"
     export function  messagetoserial():void　{ 
        let receivedmessage:string;
        if(secret){
