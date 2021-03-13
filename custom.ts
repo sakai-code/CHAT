@@ -28,7 +28,7 @@ namespace CHAT {
     //%weight=100
     //% group="CHAT"
     //% n.min=1 n.max=99 n.defl=1
-    //% x.min=1 x.max=99 x.defl=1
+    //% x.min=1 x.max=19 x.defl=1
     //% y.defl="namae"
     
      /**
@@ -101,21 +101,21 @@ namespace CHAT {
 
          
     /**
-     * TODO:グループのメッセージの変更を検知したら実行
+     * グループのメッセージの変更を検知したら実行
    　
      */
     //%weight=90
     //% group="CHAT","SERVER"
-    //% block="メッセージ|$receivedmessage|を受信したらこのブロック内のプログラムを実行する"
-   //% receivedtext.defl=receivedtext
-    //% draggableParameters="reporter"
-    export function onhand(handler:(receivedmessage:string)=> void){
+    //% block="メッセージ|$message|を受信したらこのブロック内のプログラムを実行する"
+   //% message.defl=receivedtext
+//% draggableParameters="reporter"
+    export function onhand(handler:(message:string)=> void){
         onxHandler = handler
       
     }
 
      /**
-     * TODO:自分のIDを表示
+     * 自分のIDを表示
    　
      */
     //%weight=90
@@ -233,7 +233,7 @@ namespace CHAT {
       
     }
     /**
-     * TODO:受信した文字列（英数字のみ）
+     * 受信しメッセージ（英数字のみ）
    　
      */
     //%weight=80
@@ -251,7 +251,7 @@ namespace CHAT {
     }
 
     /**
-     * TODO:受信した相手のID（英数字のみ）
+     * TODO:最後に受信した相手のID（英数字のみ）
    　
      */
     //%weight=80
@@ -295,7 +295,7 @@ namespace CHAT {
     //%weight=70
     //% group="CHAT"
     
-    //% block="グループ全体にメッセージ%yを送信（英数字のみ１７文字まで）"
+    //% block="グループ全体にメッセージ　%y　を送信（英数字のみ１７文字まで）"
     //% y.defl= "HELLO"
     export function sendmessege(y:string ){
        radio.sendValue(myname, myipaddress)
@@ -316,7 +316,7 @@ namespace CHAT {
     //%weight=70
     //% group="CHAT"
     //% n.defl=1  
-    //% block="指定したID$nにメッセージ%yを秘匿送信（英数字のみ１７文字まで）"
+    //% block="指定したID$nにメッセージ　%y　を秘匿送信（英数字のみ１７文字まで）"
     //% y.defl= "HELLO"
     export function sendsecretmessege(n:number,y:string ){
         radio.sendNumber(n)
