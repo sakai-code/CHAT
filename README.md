@@ -14,11 +14,15 @@ This repository can be added as an **extension** in MakeCode.
 
  **https://github.com/sakai-code/chat**
 
+![CHAT_page-0001](https://user-images.githubusercontent.com/76587090/111018144-9f250c00-83fa-11eb-8ed3-4a5d6b098a96.jpg)
+![CHAT_page-0002](https://user-images.githubusercontent.com/76587090/111018145-a0563900-83fa-11eb-872a-21aa948dbad1.jpg)
+![CHAT_page-0003](https://user-images.githubusercontent.com/76587090/111018146-a0eecf80-83fa-11eb-9514-4727cb1a22f9.jpg)
+![CHAT_page-0004](https://user-images.githubusercontent.com/76587090/111018147-a1876600-83fa-11eb-8dab-a583ceb7bc76.jpg)
+![CHAT_page-0005](https://user-images.githubusercontent.com/76587090/111018148-a1876600-83fa-11eb-8248-2c185d8c177c.jpg)
+![CHAT_page-0011](https://user-images.githubusercontent.com/76587090/111018149-a21ffc80-83fa-11eb-978f-55ff53b4bd3c.jpg)
+![CHAT_page-0012](https://user-images.githubusercontent.com/76587090/111018151-a21ffc80-83fa-11eb-8db2-3cc3d46e0032.jpg)
+![CHAT_page-0013](https://user-images.githubusercontent.com/76587090/111018152-a2b89300-83fa-11eb-818d-f46433acb72b.jpg)
 
-![readme_page-0003](https://user-images.githubusercontent.com/76587090/109405765-50698200-79b7-11eb-815e-e2a69981c4f0.jpg)
-![readme_page-0004](https://user-images.githubusercontent.com/76587090/109405766-50698200-79b7-11eb-852b-689527ca8d5a.jpg)
-![readme_page-0005](https://user-images.githubusercontent.com/76587090/109405767-51021880-79b7-11eb-8b6f-e53d9257aa61.jpg)
-![readme_page-0006](https://user-images.githubusercontent.com/76587090/109439663-a9e2b700-7a72-11eb-86fa-4a677a248182.jpg)
 
 
 ## Edit this project ![Build status badge](https://github.com/sakai-code/chat/workflows/MakeCode/badge.svg)
