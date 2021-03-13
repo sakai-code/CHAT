@@ -10,7 +10,7 @@ This repository can be added as an **extension** in MakeCode.
 * 高度なブロック→拡張から **Extensions** under the gearwheel menu
 * 右のURLを検索欄に張り付け **https://github.com/sakai-code/chat** and import
 
-![readme_page-0002](https://user-images.githubusercontent.com/76587090/109405762-4e9fbe80-79b7-11eb-89cf-008960ea7b97.jpg)
+
 
  **https://github.com/sakai-code/chat**
 
