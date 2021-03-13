@@ -13,15 +13,20 @@ This repository can be added as an **extension** in MakeCode.
 
 
  **https://github.com/sakai-code/chat**
+![CHAT_page-0001](https://user-images.githubusercontent.com/76587090/111018192-dc899980-83fa-11eb-9b26-400506b13de3.jpg)
+![CHAT_page-0002](https://user-images.githubusercontent.com/76587090/111018195-ddbac680-83fa-11eb-9b36-1ed583164831.jpg)
+![CHAT_page-0003](https://user-images.githubusercontent.com/76587090/111018196-de535d00-83fa-11eb-987d-f9b0bc81eeaa.jpg)
+![CHAT_page-0004](https://user-images.githubusercontent.com/76587090/111018197-de535d00-83fa-11eb-9c02-b86206346ec1.jpg)
+![CHAT_page-0005](https://user-images.githubusercontent.com/76587090/111018198-deebf380-83fa-11eb-97aa-64a753b8ad09.jpg)
+![CHAT_page-0006](https://user-images.githubusercontent.com/76587090/111018199-deebf380-83fa-11eb-8278-f8780c873b81.jpg)
+![CHAT_page-0007](https://user-images.githubusercontent.com/76587090/111018200-df848a00-83fa-11eb-9239-accdade00243.jpg)
+![CHAT_page-0008](https://user-images.githubusercontent.com/76587090/111018202-e01d2080-83fa-11eb-92ff-db2ea96a5d06.jpg)
+![CHAT_page-0009](https://user-images.githubusercontent.com/76587090/111018203-e01d2080-83fa-11eb-9076-5b39d1d27d8e.jpg)
+![CHAT_page-0010](https://user-images.githubusercontent.com/76587090/111018204-e0b5b700-83fa-11eb-8a67-8162247721c0.jpg)
+![CHAT_page-0011](https://user-images.githubusercontent.com/76587090/111018205-e0b5b700-83fa-11eb-8076-3ffbd66c367d.jpg)
+![CHAT_page-0012](https://user-images.githubusercontent.com/76587090/111018206-e14e4d80-83fa-11eb-905a-a1fd53c8773f.jpg)
+![CHAT_page-0013](https://user-images.githubusercontent.com/76587090/111018207-e14e4d80-83fa-11eb-8f01-89ea5b61cdf4.jpg)
 
-![CHAT_page-0001](https://user-images.githubusercontent.com/76587090/111018144-9f250c00-83fa-11eb-8ed3-4a5d6b098a96.jpg)
-![CHAT_page-0002](https://user-images.githubusercontent.com/76587090/111018145-a0563900-83fa-11eb-872a-21aa948dbad1.jpg)
-![CHAT_page-0003](https://user-images.githubusercontent.com/76587090/111018146-a0eecf80-83fa-11eb-9514-4727cb1a22f9.jpg)
-![CHAT_page-0004](https://user-images.githubusercontent.com/76587090/111018147-a1876600-83fa-11eb-8dab-a583ceb7bc76.jpg)
-![CHAT_page-0005](https://user-images.githubusercontent.com/76587090/111018148-a1876600-83fa-11eb-8248-2c185d8c177c.jpg)
-![CHAT_page-0011](https://user-images.githubusercontent.com/76587090/111018149-a21ffc80-83fa-11eb-978f-55ff53b4bd3c.jpg)
-![CHAT_page-0012](https://user-images.githubusercontent.com/76587090/111018151-a21ffc80-83fa-11eb-8db2-3cc3d46e0032.jpg)
-![CHAT_page-0013](https://user-images.githubusercontent.com/76587090/111018152-a2b89300-83fa-11eb-818d-f46433acb72b.jpg)
 
 
 
