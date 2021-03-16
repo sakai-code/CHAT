@@ -12,9 +12,13 @@ This repository can be added as an **extension** in MakeCode.
 
 
 
- **https://github.com/sakai-code/chat**
+
 ![CHAT_page-0001](https://user-images.githubusercontent.com/76587090/111241335-41820100-8640-11eb-9418-4449cc69dca7.jpg)
 ![CHAT_page-0002](https://user-images.githubusercontent.com/76587090/111241340-421a9780-8640-11eb-94b4-f7cd8b9e9de9.jpg)
+
+ **https://github.com/sakai-code/chat**
+ 
+ 
 ![CHAT_page-0003](https://user-images.githubusercontent.com/76587090/111241341-42b32e00-8640-11eb-9f4d-2f96ae68811d.jpg)
 ![CHAT_page-0004](https://user-images.githubusercontent.com/76587090/111241345-434bc480-8640-11eb-9955-5c2b061ff4fa.jpg)
 ![CHAT_page-0005](https://user-images.githubusercontent.com/76587090/111241347-434bc480-8640-11eb-9284-7cfb66fd0f26.jpg)
