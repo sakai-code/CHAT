@@ -1,6 +1,6 @@
 
 //% weight=100 color=#007EFF icon="\uf022"　block="チャット"
-//% groups="['CHAT', 'SERVER']"
+//% groups="['CHAT', 'MONITOR']"
 namespace CHAT {
     let receivedtoip = 0
     let receivedfromip = ""
@@ -331,12 +331,12 @@ namespace CHAT {
 
 
      /**
-     * TODO:グループXのサーバーになりサーバーにメッセージの流れを監視する（IDは０、名前はSERVERで登録される）
+     * TODO:グループXのモニターになりサーバーにメッセージの流れを監視する（IDは０、名前はSERVERで登録される）
    　
      */
     //%weight=60
-    //% group="SERVER"
-    //% block="グループ番号$nのサーバーになり、メッセージの流れを見る"
+    //% group="MONITOR"
+    //% block="グループ番号$nのモニター機器になり、メッセージの流れを見る"
     //% n.min=1 n.max=99 n.defl=1
     export function server(n:number){
         radio.setGroup(n)
@@ -400,7 +400,7 @@ namespace CHAT {
    　
      */
     //%weight=50
-    //% group="SERVER"
+    //% group="MONITOR"
     //% block="グループでメッセージのやり取りがあったら"
    
     
@@ -415,8 +415,8 @@ namespace CHAT {
    　
      */
     //%weight=40
-    //% group="SERVER"
-    //% block="受信したデバイスID : 登録された名前 : メッセージの内容"
+    //% group="MONITOR"
+    //% block="受信したデバイスID : 登録された名前 : メッセージの内容の文字列"
     export function  receivedmessage():string　{ 
         let receivedmessage:string;
         if(secret){
@@ -437,7 +437,7 @@ namespace CHAT {
    　
      */
     //%weight=40
-    //% group="SERVER"
+    //% group="MONITOR"
     //% block="デバイスID + 名前 ＋ メッセージの内容をシリアル通信で出力"
     export function  messagetoserial():void　{ 
        let receivedmessage:string;
@@ -467,12 +467,12 @@ namespace CHAT {
     
         /**
      * TODO:サーバーから全体にメッセージを送る
-     * @param y 送る内容　,eg:"HELLO FROM SERVER"
+     * @param y 送る内容　,eg:"HELLO FROM MASTER"
    　
      */
     //%weight=40
-    //% group="SERVER"
-    //% block="サーバーから全体にメッセージ$yを送る"
+    //% group="MONITOR"
+    //% block="モニター機器から全体にメッセージ$yを送る"
     
     export function sendmessage(y:string):void{
         radio.sendValue("SERVER", 0)
